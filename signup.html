@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sign Up - Phoenix TV</title>
 <style>
-  /* Your existing CSS here */
   body {
     background-color: #0f0f0f;
     color: #eee;
@@ -18,11 +17,7 @@
     margin: 0;
     padding: 20px;
   }
-  h2 {
-    color: #ff4500;
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
+  h2 { color: #ff4500; margin-bottom: 30px; font-size: 2rem; }
   input {
     width: 300px;
     padding: 12px 15px;
@@ -33,9 +28,7 @@
     background-color: #1c1c1c;
     color: #eee;
   }
-  input::placeholder {
-    color: #999;
-  }
+  input::placeholder { color: #999; }
   button {
     width: 320px;
     background-color: #ff4500;
@@ -48,32 +41,15 @@
     margin-top: 20px;
     transition: background-color 0.2s ease;
   }
-  button:hover {
-    background-color: #e03e00;
-  }
-  p {
-    margin-top: 20px;
-    font-size: 0.9rem;
-  }
-  a {
-    color: #ff4500;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .error {
-    color: #f55;
-    margin-top: 10px;
-  }
+  button:hover { background-color: #e03e00; }
+  .error { color: #f55; margin-top: 10px; }
 </style>
 
-<!-- Firebase CDN -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
 
 <script>
-  // Your Firebase config
+  // Your Firebase config, check your real config carefully
   const firebaseConfig = {
     apiKey: "AIzaSyCKwmv9rX2rZzy8GLOXi4bDs1OrcjZ-chs",
     authDomain: "phoenixtv-fe088.firebaseapp.com",
@@ -88,17 +64,18 @@
   const auth = firebase.auth();
 
   function signUp() {
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const errorDiv = document.getElementById("error-message");
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorDiv = document.getElementById('error-message');
     errorDiv.textContent = "";
 
     if (!email || !password) {
       errorDiv.textContent = "Please fill in all fields.";
       return;
     }
+
     auth.createUserWithEmailAndPassword(email, password)
-      .then(() => {
+      .then(userCredential => {
         alert("Signed up successfully!");
         window.location.href = "dashboard.html";
       })
@@ -117,8 +94,6 @@
 <button onclick="signUp()">Sign Up</button>
 
 <div id="error-message" class="error"></div>
-
-<p>Already have an account? <a href="login.html">Log In</a></p>
 
 </body>
 </html>
