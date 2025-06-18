@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sign Up - Phoenix TV</title>
 <style>
+  /* Your existing CSS here */
   body {
     background-color: #0f0f0f;
     color: #eee;
@@ -67,22 +68,22 @@
   }
 </style>
 
-<!-- Firebase -->
+<!-- Firebase CDN -->
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+
 <script>
-  import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
- const firebaseConfig = {
-  apiKey: "AIzaSyCKwmv9rX2rZzy8GLOXi4bDs1OrcjZ-chs",
-  authDomain: "phoenixtv-fe088.firebaseapp.com",
-  projectId: "phoenixtv-fe088",
-  storageBucket: "phoenixtv-fe088.firebasestorage.app",
-  messagingSenderId: "964490847044",
-  appId: "1:964490847044:web:d914a40b93aa88b5752d11",
-  measurementId: "G-WLZ1TZ896W"
-};
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKwmv9rX2rZzy8GLOXi4bDs1OrcjZ-chs",
+    authDomain: "phoenixtv-fe088.firebaseapp.com",
+    projectId: "phoenixtv-fe088",
+    storageBucket: "phoenixtv-fe088.appspot.com",
+    messagingSenderId: "964490847044",
+    appId: "1:964490847044:web:d914a40b93aa88b5752d11"
   };
+
+  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
 
