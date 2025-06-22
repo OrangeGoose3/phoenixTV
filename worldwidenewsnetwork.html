@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live - Phoenix TV</title>
+  <meta charset="UTF-8" />
+  <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #eee;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 40px;
+    }
+    h1 { color: #ff4500; }
+    video { width: 100%; max-width: 720px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>Worldwide News Network - Live Stream</h1>
+
+<video
+  id="liveVideo"
+  class="video-js vjs-default-skin"
+  controls
+  autoplay
+  muted
+  data-setup='{}'>
+  <source src="http://localhost:8080/hls/test.m3u8" type="application/x-mpegURL">
+  Your browser does not support HLS.
+</video>
+
+<script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+</body>
+</html>
